@@ -13,15 +13,19 @@
 // limitations under the License.
 
 using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 [RequireComponent(typeof(Collider))]
 public class Teleport : MonoBehaviour {
   private Vector3 startingPosition;
-
+	public Canvas canvas;
+	public Slider slider;
   void Start() {
     startingPosition = transform.localPosition;
     SetGazedAt(false);
+		//canvas = GetComponentInChildren<Canvas> ();
+		canvas.enabled = false;
   }
 
   public void SetGazedAt(bool gazedAt) {
@@ -37,9 +41,21 @@ public class Teleport : MonoBehaviour {
   }
 
   public void TeleportRandomly() {
+		canvas.enabled = !canvas.enabled;
+	/*
     Vector3 direction = Random.onUnitSphere;
     direction.y = Mathf.Clamp(direction.y, 0.5f, 1f);
     float distance = 2 * Random.value + 1.5f;
     transform.localPosition = direction * distance;
+    */
   }
+	public void tempUP()
+	{
+		slider.value = Mathf.Min (1f, slider.value + 0.1f);
+
+	}
+	public void tempDown()
+	{
+		slider.value = Mathf.Max (0f, slider.value - 0.1f);
+	}
 }
