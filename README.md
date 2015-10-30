@@ -1,6 +1,6 @@
 # Carboard-DreamSpace
 
-Stub desc
+A VR simulator to prototype controlling IOT connected home appliances, built for the VR Hackathon at Play Conference
 
 ## Simple Direct install
 1. Enable installation from Unknown Souces inside the phone
