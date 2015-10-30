@@ -21,6 +21,7 @@ public class Teleport : MonoBehaviour {
   private Vector3 startingPosition;
 	public Canvas canvas;
 	public Slider slider;
+	public Text degree;
   void Start() {
     startingPosition = transform.localPosition;
     SetGazedAt(false);
@@ -29,7 +30,7 @@ public class Teleport : MonoBehaviour {
   }
 
   public void SetGazedAt(bool gazedAt) {
-    GetComponent<Renderer>().material.color = gazedAt ? Color.green : Color.red;
+    GetComponent<Renderer>().material.color = gazedAt ? Color.green : Color.white;
   }
 
   public void Reset() {
@@ -57,5 +58,9 @@ public class Teleport : MonoBehaviour {
 	public void tempDown()
 	{
 		slider.value = Mathf.Max (0f, slider.value - 0.1f);
+	}
+
+	void Update(){
+		degree.text = string.Format ("{0}", (int)((100 - 32) * slider.value + 32));
 	}
 }
