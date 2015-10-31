@@ -8,7 +8,7 @@ A VR simulator to prototype controlling IOT connected home appliances, built for
 3. Follow the on screen instructions to install.
 
 
-## Installation on Tango Device:
+## Installation on Device:
 
 1. Install Android SDK
 2. Run `git clone https://github.com/Omarasifshaikh/Carboard-DreamSpace.git` in your working directory
